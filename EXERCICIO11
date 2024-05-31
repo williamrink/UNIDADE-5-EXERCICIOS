@@ -1,0 +1,12 @@
+public class Uni5Exe11 {
+    public static void main(String[] args) {
+
+        System.out.println("");
+        int biscoitosQuebrados = 1;
+        for (int i = 0; i < 15; i++) { //15 pois a primeira hora foi apenas 1 biscoito
+            biscoitosQuebrados *= 3;
+        }
+        biscoitosQuebrados++; //1 biscoito referente a primeira hora
+        System.out.println("Biscoitos quebrados no final do dia: " + biscoitosQuebrados);
+    }
+}
