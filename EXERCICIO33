@@ -1,0 +1,99 @@
+import java.util.Scanner;
+
+public class Uni5Exe33 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Eleição");
+        int voto = 0;
+        int voto1 = 0;
+        int voto2 = 0;
+        int voto3 = 0;
+        int voto4 = 0;
+        int voto5 = 0;
+        int voto6 = 0;
+        int totalVotos = 0;
+        do {
+            System.out.println("Candidatos:\n(1) (2) (3) (4) \n(5) Nulo\n(6) Branco");
+            System.out.println("Digite seu voto: ");
+            voto = teclado.nextInt();
+
+            System.out.println((voto < 1 || voto > 6 ? "\nOPÇÃO INCORRETA\n" : ""));
+        } while (voto < 1 || voto > 6);
+
+
+        while (voto != 0) {
+            switch (voto) {
+                case 1:
+                    voto1++;
+                    totalVotos++;
+                    break;
+                case 2:
+                    voto2++;
+                    totalVotos++;
+                    break;
+                case 3:
+                    voto3++;
+                    totalVotos++;
+                    break;
+                case 4:
+                    voto4++;
+                    totalVotos++;
+                    break;
+                case 5:
+                    voto5++;
+                    totalVotos++;
+                    break;
+                case 6:
+                    voto6++;
+                    totalVotos++;
+                    break;
+                default:
+                    System.out.println("\nOPÇÃO INCORRETA, NÃO SERÁ CONTABILIZADA\n");
+                    }
+            System.out.println("Candidatos:\n(1) (2) (3) (4) \n(5) Nulo\n(6) Branco");
+            System.out.println("Digite seu voto (0 encerra): ");
+            voto = teclado.nextInt();
+        }
+        String eleito = "";
+        if(voto1 > voto2 && voto1 > voto3 && voto1 > voto4){
+            eleito = "Candidato 1";
+        }else if(voto2 > voto1 && voto2 > voto3 && voto2 > voto4){
+            eleito = "Candidato 2";
+        }else if(voto3 > voto1 && voto3 > voto2 && voto3 > voto4){
+            eleito = "Candidato 3";
+        }else if(voto4> voto1 && voto4 > voto2 && voto4 > voto3){
+            eleito = "Candidato 4";
+        }else{
+            eleito = "SEM PRESIDENTE (EMPATE)";
+        }
+        
+        System.out.println("\nO presidente eleito é o . . . " + eleito);
+        System.out.println("\nDetalhes da votação: ");
+        System.out.printf( "Total de votos: %d%n" +
+            "Nº(1) Candidato 1: %d votos | Percentual: %.1f\n" + 
+            "Nº(2) Candidato 2: %d votos | Percentual: %.1f\n" + 
+            "Nº(3) Candidato 3: %d votos | Percentual: %.1f\n" + 
+            "Nº(4) Candidato 4: %d votos | Percentual: %.1f\n" +
+            "Nº(5) Votos Nulos: %d%n" + 
+            "Nº(6) Votos em Branco: %d%n" +
+            "Percentual de votos nulos e em branco: %.1f", 
+            totalVotos,
+            voto1, (((double)voto1/totalVotos)*100), voto2, (((double)voto2/totalVotos)*100), 
+            voto3, (((double)voto3/totalVotos)*100), voto4, (((double)voto4/totalVotos)*100),
+            voto5, voto6, (((double)(voto5+voto6)/totalVotos)*100)
+            );
+    }
+}
+------------------------------------------------
+public class Uni5Exe3{
+    public static void main(String[] args) {
+
+        double soma = 0;
+        for (int i = 1; i <= 100 ; i++) {
+            double denominador = i;
+            soma += 1/denominador;
+        }
+        System.out.println("Soma: " + soma);
+    }
+}
