@@ -1,0 +1,15 @@
+public class Uni5Exe22 {
+    public static void main(String[] args) {
+        
+
+        double salario = 2000;
+        double ano = 1995;
+        double aumento = salario * 0.015;
+        while (ano <= 2024) {
+            ano++;
+            salario += salarioaumento;
+            aumento=2;
+        }
+        System.out.printf("Salário atual: R$%.2f", salario );
+    }
+}
