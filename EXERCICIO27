@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Uni5Exe27 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        int op = 1;
+        int dia = 0;
+        int totalPecasManha = 0;
+        int totalPecasTarde = 0;
+        int diaMaisProdutivo = 0;
+        double maiorProducao = 0;
+        while (op == 1){
+            while (true) {
+                System.out.println("Informe o dia do mês de abril: ");
+                dia = teclado.nextInt();
+                    if(dia > 0 && dia < 31){
+                        break;
+                    }
+                    else{
+                        System.out.println("DIA INVÁLIDO!!!");
+                    }
+            }
+            System.out.println("Total de peças produzidas no turno da manhã: ");
+            int pecasManha = teclado.nextInt();
+            System.out.println("Total de peças produzidas no turno da tarde: ");
+            int pecasTarde = teclado.nextInt();
+            double salarioDia = 0;
+            double valorPecas = 0;
+            totalPecasManha += pecasManha;
+            totalPecasTarde += pecasTarde;
+            double producaoTotal = pecasManha + pecasTarde;
+            if (producaoTotal > maiorProducao){
+                maiorProducao = producaoTotal;
+                diaMaisProdutivo = dia;
+            }
+            if(dia < 15){
+                valorPecas = (pecasManha + pecasTarde >= 100 && pecasManha >= 30 && pecasTarde >=30) ? 0.8 : 0.5 ;
+                salarioDia = (pecasManha + pecasTarde) * valorPecas;
+            }else{
+                salarioDia += 0.4 * pecasManha + 0.3 * pecasTarde;
+            }
+            System.out.printf("Valor recebido: R$%.2f", salarioDia);
+            System.out.println("Novo funcionário: (1) Sim (2) Não");
+            op = teclado.nextInt();
+        }
+        String texto = (totalPecasManha > totalPecasTarde 
+        ? String.format("manhã com um total de %d peças", totalPecasManha)
+        : String.format("tarde com um total de %d peças", totalPecasTarde));
+        System.out.printf("\nDia com a maior produção: Dia %d de abril",diaMaisProdutivo);
+        System.out.print("\nO horário que o funcionário mais produz é no período da " + texto); 
+    }
+}
