@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Uni5Exe14 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        double valorTotalCompra = 0;
+        double valorTotalVenda = 0;
+        int lucroMenor10 = 0;
+        int lucroMaior10 = 0;
+        int lucroMaior20 = 0;
+        for (int i = 1; i <= 4; i++) {
+            System.out.print("\nNome do produto: ");
+            String nomeProduto = teclado.next();
+            System.out.print("Preço de compra: ");
+            double precoCompra = teclado.nextDouble();
+            System.out.print("Preço de venda: ");
+            double precoVenda = teclado.nextDouble();
+            valorTotalCompra += precoCompra;
+            valorTotalVenda += precoVenda;
+            double percentualLucro = (precoVenda-precoCompra)/precoCompra*100;
+            if(percentualLucro < 10){
+                lucroMenor10++;
+            }else if(percentualLucro > 20){
+                lucroMaior20++;
+            }else{
+                lucroMaior10++;
+            }
+        }
+        double lucroTotal = valorTotalVenda - valorTotalCompra;
+        System.out.println("\nMercadorias com:");
+        System.out.println("Lucro menor que 10%: " + lucroMenor10);
+        System.out.println("Lucro entre 10% e 20%: " + lucroMaior10);
+        System.out.println("Lucro maior que 20%: " + lucroMaior20);
+        System.out.printf("\nValor total de vendas: R$%.2f",valorTotalVenda);
+        System.out.printf("\nValor total de compras: R$%.2f",valorTotalCompra);
+        System.out.printf("\nLucro total: R$%.2f",lucroTotal);
+    }
+}
