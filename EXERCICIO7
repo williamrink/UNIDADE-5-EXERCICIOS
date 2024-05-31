@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Uni5Exe07 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        double menorValor = Double.MAX_VALUE;
+        double maiorValor = Double.MIN_VALUE;
+
+        System.out.println("Insira um número");
+        int inteiroN = teclado.nextInt();
+
+        for (int i = 1; i <= inteiroN; i++) {
+            System.out.printf("Insira o número %d: ", i);
+            double numero = teclado.nextDouble();
+
+            if(numero < menorValor){
+                menorValor = numero;
+            }
+            if(numero > maiorValor){
+                maiorValor = numero;
+            }
+        }
+
+        System.out.println("Maior valor: " + maiorValor);
+        System.out.println("Menor valor: " + menorValor);
+    }
+
+}
