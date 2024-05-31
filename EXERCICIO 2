@@ -1,0 +1,19 @@
+public class Uni5Exe2 {
+    public static void main(String[] args) {
+       
+
+        int pares = 0;
+        int impares = 0;
+        for (int i = 0; i <= 100 ; i++) {
+            int numero = i;
+            if(numero%2 == 0){
+                pares+=numero;
+            }else{
+                impares+=numero;
+            }
+        }
+        System.out.println("Soma dos pares: " + pares);
+        System.out.println("Soma dos ímpares: " + impares);
+
+    }
+}
