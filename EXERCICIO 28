@@ -1,0 +1,66 @@
+Import java.util.Scanner;
+
+public class Uni5Exe28 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Votação");
+        int voto1 = 0;
+        int voto2 = 0;
+        int voto3 = 0;
+        int voto4 = 0;
+        int totalVotos = 0;
+        String continua = "S";
+        while (continua.equalsIgnoreCase("S")) {
+            System.out.println("(1) Nenhum de nós\n(2) CPM22\n(3) Skan\n(4) Jota Quest");
+            System.out.println("Digite seu voto: ");
+            int voto = teclado.nextInt();
+
+            switch (voto) {
+                case 1:
+                    voto1++;
+                    totalVotos++;
+                    break;
+                case 2:
+                    voto2++;
+                    totalVotos++;
+                    break;
+                case 3:
+                    voto3++;
+                    totalVotos++;
+                    break;
+                case 4:
+                    voto4++;
+                    totalVotos++;
+                    break;
+default: System.out.println("Voto inválido");
+                    break;
+            }
+            System.out.println("Mais um voto? (S) Sim / (N) Não");
+            continua = teclado.next();
+        }
+        String campeao = " ";
+        if(voto1 > voto2 && voto1 > voto3 && voto1 > voto4){
+            campeao = "Nenhum de nós";
+        }else if(voto2 > voto1 && voto2 > voto3 && voto2 > voto4){
+            campeao = "CPM 22";
+        }else if(voto3 > voto1 && voto3 > voto2 && voto3 > voto4){
+            campeao = "Skank";
+        }else if(voto4> voto1 && voto4 > voto2 && voto4 > voto3){
+            campeao = "Jota Quest";
+        }else{
+            campeao = "EMPATE";
+        }
+        System.out.println("\nO melhor conjunto do ano é . . . " + campeao);
+        System.out.println("\nDetalhes da votação: ");
+        System.out.printf( "Total de votos: %d%n" +
+            "N°(1) Nenhum de nós: %d votos | Percentual: %.1f\n" + 
+            "N°(2) CPM22: %d votos | Percentual: %.1f\n" + 
+            "N°(3) Skank: %d votos | Percentual: %.1f\n" + 
+            "N°(4) Jota Quest: %d votos | Percentual: %.1f", 
+             totalVotos,
+             voto1, (((double)voto1/totalVotos)100), voto2, (((double)voto2/totalVotos)100), 
+             voto3, (((double)voto3/totalVotos)100), voto4, (((double)voto4/totalVotos)100)
+                        );
+    }
+}
