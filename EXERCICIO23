@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Uni5Exe23 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        String continua = "s";
+        String relatorio = "\nRelatório de vendas por vendededor:";
+        System.out.println("\nCadastro de vendas por vendedor: ");
+        while(continua.equalsIgnoreCase("S")){
+            System.out.println("\nNome: ");
+            String nome = teclado.next();
+            System.out.println("Número de produtos diferentes vendidos: ");
+            int qtdVendas = teclado.nextInt();
+            double totalVendas = 0;
+            double salario = 0;
+            for (int i = 1; i <= qtdVendas; i++) {
+                System.out.printf("\nProduto %d:", i);
+                System.out.println("\nPreço unitário: ");
+                double precoUnit = teclado.nextDouble();
+                System.out.println("Quantidade vendida: ");
+                int qtdVendido = teclado.nextInt();
+                totalVendas += precoUnit * qtdVendido;
+                salario += (precoUnit * 0.3) * qtdVendido;
+            }
+            relatorio += String.format("\nNome: %s | Total de vendas: R$%.2f | Salário: R$%.2f", nome, totalVendas, salario) ;
+            System.out.println("Deseja digitar os dados de mais um vendedor: (s) SIM / (n) NÃO: ");
+            continua = teclado.next();
+        }
+        System.out.println(relatorio);
+    }
+}
