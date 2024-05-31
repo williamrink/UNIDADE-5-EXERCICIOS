@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Uni5Exe9 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Insira o numero de alunos da turma:");
+        int numAlunos = teclado.nextInt();
+        System.out.println("");
+        int alunosIdade20 = 0;
+        String alunos = "";
+        for (int i = 1; i <= numAlunos; i++) {
+            System.out.println("\nNome do aluno:");
+            String nome = teclado.next();
+            System.out.println("Idade do aluno: ");
+            int idade = teclado.nextInt();
+            alunosIdade20 += (idade > 20) ? 1 : 0; 
+            if(i == numAlunos){
+                alunos += (idade == 18) ? nome : "";
+            }else{
+                alunos += (idade == 18) ? nome + ", " : "";
+            }
+        }
+        System.out.println("\nAlunos com 18: " + alunos);
+        System.out.println("Número de alunos com idade acima de 20: " + alunosIdade20);
+    }
+}
