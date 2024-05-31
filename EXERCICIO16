@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Uni5Exe16 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Gênero: (M/F)");
+        String genero = teclado.next();
+        System.out.println("Altura: ");
+        double altura = teclado.nextDouble();
+
+        double alturaMulheres = 0;
+        double contadorMulheres = 0;
+        double alturaTodos = 0;
+        double contadorTodos = 0;
+
+        while (altura != 0) {
+            alturaTodos+=altura;
+            contadorTodos++;
+
+            if(genero.equalsIgnoreCase("F")){
+                alturaMulheres += altura;
+                contadorMulheres++;
+            }
+
+        System.out.println("Gênero: (M/F)");
+        genero = teclado.next();
+        System.out.println("Altura: ");
+        altura = teclado.nextDouble();
+        }
+
+        System.out.println("\nMédia de altura de todos: " + (alturaTodos/contadorTodos));
+        System.out.println("Média de altura das mulheres: " + (alturaMulheres/contadorMulheres));
+    }
+}
