@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Uni5Exe18 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        double qtdPessoas = 0;
+        double qtdCanal4 = 0;
+        double qtdCanal5 = 0;
+        double qtdCanal9 = 0;
+        double qtdCanal12 = 0;
+        System.out.println("Informe o número do canal assistido: ");
+        int numeroCanal = teclado.nextInt();
+        while (numeroCanal != 0) {
+            System.out.println("Número de pessoas assistindo: ");
+            int pessoasAssistindo = teclado.nextInt();
+            qtdPessoas += pessoasAssistindo;
+            switch (numeroCanal) {
+                case 4:
+                    qtdCanal4 += pessoasAssistindo;
+                    break;
+                case 5:
+                    qtdCanal5 += pessoasAssistindo;
+                    break;
+                case 9:
+                    qtdCanal9 += pessoasAssistindo;
+                    break;
+                case 12:
+                    qtdCanal12 += pessoasAssistindo;
+                    break;
+
+                default: System.out.println("Canal inválido");
+                    qtdPessoas -= pessoasAssistindo;
+                    break;
+            }
+            System.out.println("Informe o número do canal: ");
+            numeroCanal = teclado.nextInt();
+        }
+        System.out.println("Percentual de audiência dos canais: ");
+        System.out.printf("\nCanal 4: %.1f", (qtdCanal4/qtdPessoas)100);
+        System.out.printf("\nCanal 5: %.1f", (qtdCanal5/qtdPessoas)100);
+        System.out.printf("\nCanal 9: %.1f", (qtdCanal9/qtdPessoas)100);
+        System.out.printf("\nCanal 12: %.1f",(qtdCanal12/qtdPessoas)100);
+    }
+}
