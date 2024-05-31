@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Uni5Exe19 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        double valorVendasTotal = 0;
+        System.out.println("Insira o valor da compra: ");
+        double compra = teclado.nextDouble();
+        while (compra != 0) {
+            if(compra > 500){
+                double valorFinal = (compra - (compra*0.2));
+                valorVendasTotal += valorFinal;
+                System.out.printf("\nVocê ganhou 20 porcento de desconto\nValor a pagar: R$%.2f", valorFinal );
+            }else{
+                double valorFinal = (compra - (compra*0.15));
+                valorVendasTotal += valorFinal;
+                System.out.printf("\nVocê ganhou 15 porcento de desconto\nValor a pagar: R$%.2f", (compra - (compra*0.15)));
+            }
+         
+            System.out.println("\nInsira o valor da compra: ");
+            compra = teclado.nextDouble();
+        }
+        System.out.printf("Total recebido em vendas hoje: R$%.2f", valorVendasTotal);
+    }
+}
