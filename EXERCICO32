@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Uni5Exe32 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        int totalDiasMes, primeiroDia;
+        while(true){
+            System.out.println("Que dia cai o primeiro dia do mês? (1) Dom, (2) Seg . . . (7) = Sab");
+            primeiroDia = teclado.nextInt();
+            System.out.println("Número de dias que o mês possui: ");
+            totalDiasMes = teclado.nextInt();
+
+            if(primeiroDia > 7  primeiroDia <1  totalDiasMes > 31 || totalDiasMes < 28){
+                System.out.println("PRIMEIRO DIA OU NÚMERO DE DIAS INVÁLIDO!!!\nPRIMEIRO DIA: 1-7 | DIAS: 28 - 31");
+            }else{
+                break;
+            }
+        }
+        int dia = 1;
+        String espacoCalendar = "1";
+        System.out.println("\nD   |   S   |   T   |   Q   |   Q   |   S   |   S");
+        while (dia <= totalDiasMes) {
+
+            for (int k = 1; k < primeiroDia; k++) {
+            System.out.print(" \t");    //espaços vazios antes do primeiro dia
+            }
+
+            double espacosVazios = 0;
+            for (int i = 1; i <= 6; i++) {
+                espacosVazios = 0;
+
+                if(i == 1){
+                    espacosVazios = primeiroDia-1; //primeira semana tem menos dias que as demais por causa
+                }                                  //dos espaços vazios
+
+                for (int j = 1; j <= 7-espacosVazios && dia <= totalDiasMes; j++) { 
+                    System.out.print(dia +"\t");
+                    dia++;
+                }
+                System.out.println(" ");
+            }
+        }
+    }
+}
