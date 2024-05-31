@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Uni5Exe31 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Insira um número inteiro positivo: ");
+        int numero = teclado.nextInt();
+        double numPrimo = 2;
+        System.out.println("Número  | Decomposição");
+        while(numero != 1){
+            boolean divisivel = false;
+            while(!divisivel){
+                boolean isPrimo = true;
+                
+                if((double)numero%numPrimo != 0){
+                    numPrimo++;
+                    isPrimo = false;
+                }else{
+                    divisivel = true;
+                }
+                while(!isPrimo){
+                   isPrimo = true;
+                   for (int i = 2; i < numPrimo; i++) {
+                        if(numPrimo%i == 0){
+                            isPrimo = false;
+                            numPrimo++;
+                        }
+                    }
+                }
+            }
+         
+            System.out.printf("%d\t| %.0f%n", numero, numPrimo);
+            numero /= numPrimo;
+        }
+        System.out.println(1);
+    }
+}
