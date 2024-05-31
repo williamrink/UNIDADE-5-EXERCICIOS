@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Uni5Exe26 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Valor do pedágio inaceitável: ");
+        double valorMax = teclado.nextDouble();
+        int totalTrechos = 0;
+        int trechosNegados = 0;
+        int trechos150 = 0;
+        System.out.println("Insira o valor do pedágio: ");
+        double pedagio = teclado.nextDouble();
+        while(pedagio > 0){
+            System.out.println("Distância percorrida: ");
+            double distancia = teclado.nextDouble();
+            totalTrechos++;
+            trechosNegados += (pedagio>valorMax ? 1 : 0);
+            trechos150 += (pedagio <= valorMax && distancia > 150 ? 1 : 0);
+            System.out.println("Insira o valor do pedágio: ");
+            pedagio = teclado.nextDouble();
+        }
+        System.out.println("Trechos que ele se nega a pagar: " + trechosNegados);
+        System.out.println("Quantidade de trechos informados: " + totalTrechos);
+        System.out.println("Trechos acima de 150km aceitos: " + trechos150);
+    }
+}
