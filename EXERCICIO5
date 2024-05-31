@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Uni5Exe5 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Insira um numero inteiro:");
+        int numN = teclado.nextInt();
+        System.out.println("");
+        int numero = 0;
+        int multiplicador = 1;
+        if(numN <=2){
+            System.out.println("Número inválido");
+        }
+        else{
+            for (int i = 1; i <= numN; i++) {
+            
+                if(i%2 != 0){
+                numero = 8*multiplicador;
+                multiplicador = multiplicador*2;
+                }else{
+                numero += 2;
+                }
+            
+                if(i == numN){
+                    System.out.println(numero); //para não escrever o último número com a vírgula atrás
+                }else{
+                    System.out.print(numero + ", ");
+                }
+            
+            }
+        }
+    }
+}
