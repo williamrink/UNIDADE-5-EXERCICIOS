@@ -1,0 +1,15 @@
+
+public class Uni5Exe21 {
+    public static void main(String[] args) {
+
+        int contadorAnos = 0;
+        double alturaChico = 1.5;
+        double alturaZe = 1.1;
+        while (alturaChico > alturaZe){
+            contadorAnos++;
+            alturaChico += 0.02;
+            alturaZe += 0.03;
+        }
+        System.out.printf("Anos necessários: %d anos", contadorAnos);
+    }
+}
