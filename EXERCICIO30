@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Uni5Exe30 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Insira o valor de início N:");
+        int valN = teclado.nextInt();
+        System.out.println("Insira o valor do decremento K: ");
+        int valK = teclado.nextInt();
+        String todosItens = "";
+        int qtdTotalItens = 0;
+        //tamanho M da mochila vai ser 10
+        int mochilaItens = 1;
+        int somaMochila = 0;
+        String itensNaMochila = "";
+        int somaFora = 0;
+        String itensForaMochila = "";
+        while (mochilaItens <= 10) {
+            somaMochila += valN;
+            itensNaMochila += String.format("Item %d: %d\n", mochilaItens, valN);
+            todosItens += String.format("Item: %d\n", valN);
+            qtdTotalItens++;
+            mochilaItens++;
+            valN -= valK;
+        }
+        mochilaItens = 1;
+        while(valN > 0){
+            somaFora += valN;
+            itensForaMochila += String.format("Item %d: %d\n", mochilaItens, valN);
+            todosItens += String.format("Item: %d\n", valN);
+            qtdTotalItens++;
+            mochilaItens++;
+            valN -= valK;
+        }
+        System.out.printf("Itens a serem adicionados: (%d)\n%s",qtdTotalItens, todosItens);
+        System.out.println("\nItens que entraram na mochila: (10)\n" + itensNaMochila);
+        System.out.printf("Itens que ficaram fora da mochila: (%d)\n%s",(qtdTotalItens-10), itensForaMochila);
+        System.out.println("\nSoma dos itens que entraram: " + somaMochila);
+        System.out.println("Soma dos itens que não entraram: " + somaFora);
+    }
+}
