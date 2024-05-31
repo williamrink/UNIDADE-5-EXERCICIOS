@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Uni5Exe25 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        int pontosDireito = 0;
+        int pontosEsquerdo = 0;
+        int diferenca = 0;
+        while(
+            pontosDireito < 11 && pontosEsquerdo < 11 || diferenca < 2
+        ){
+            System.out.println("\nInsira o código do ponto:");
+            char codigo = teclado.next().toLowerCase().charAt(0);
+            switch (codigo) {
+                case 'd':
+                    pontosDireito++;
+                    break;
+                case 'e':
+                    pontosEsquerdo++;
+                    break;
+         
+                default: System.out.println("Código inválido");
+                    break;
+            }
+            System.out.printf("Placar:\nEsquerdo %d X %d Direito\n", pontosEsquerdo, pontosDireito);
+            int diferencaNaoTratada = pontosDireito - pontosEsquerdo;
+            diferenca = (diferencaNaoTratada < 0 ? diferencaNaoTratada*-1 : diferencaNaoTratada);
+            System.out.println(diferenca);
+        }
+        System.out.println("\nFIM");
+    }
+}
