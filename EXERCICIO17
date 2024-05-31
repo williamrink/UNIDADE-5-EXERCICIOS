@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Uni5Exe17 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        double altura = 0;
+        int contadorAtletas = 0;
+        double totalAlturas = 0;
+        double maiorAltura = Double.MIN_VALUE;
+        int atletaMaior = 0;
+        double menorAltura = Double.MAX_VALUE;
+        int atletaMenor = 0;
+        System.out.println("Informe o número de inscrição: ");
+        int numIns = teclado.nextInt();
+        while (numIns != 0) {
+            contadorAtletas++;
+            System.out.println("Informe a altura: ");
+            altura = teclado.nextDouble();
+            totalAlturas += altura;
+            if (altura > maiorAltura){
+                maiorAltura = altura;
+                atletaMaior = numIns;
+            }
+            if (altura < menorAltura){
+                menorAltura = altura;
+                atletaMenor = numIns;
+            }
+            System.out.println("Informe o número de inscrição do atleta: (0 = encerrar)");
+            numIns = teclado.nextInt();
+        }
+        System.out.printf("\nAtleta mais alto: \nNúmero - %d%nAltura - %.2fm", atletaMaior, maiorAltura);
+        System.out.printf("\nAtleta mais baixo: \nNúmero - %d%nAltura - %.2fm", atletaMenor, menorAltura);
+        System.out.printf("\n\nMédia da altura dos atletas: %.2fm", (totalAlturas/contadorAtletas));
+    }
+}
