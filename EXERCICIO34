@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Uni5Exe34 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        int op = 0;
+        int acao = 0;
+        boolean flag = true;
+        int numContasEnc = 0;
+        System.out.println("\nSistema do hotel: ");
+        while (flag) {
+            do {
+                System.out.println("\n(1) Encerrar a conta de um hóspede\n(2) Verificar número de contas encerradas;\n(3) Sair");
+                op = teclado.nextInt();
+                acao = 0;
+                switch (op) {
+                    case 1: //eu queria muito só colocar um método aqui em cada case mas ainda não pode usar OOP ;-;
+                        acao = 1;
+                        break;
+                    case 2: 
+                        acao = 2;
+                        break;
+                    case 3: 
+                        acao = 3;
+                        break;
+                    default: System.out.println("\nOPÇÃO INVÁLIDA !! TENTE NOVAMENTE");
+                        break;
+                }
+            } while (op < 1 || op > 3);
+            switch (acao) {
+                case 1:
+                    System.out.println("Insira o nome do hóspede: ");
+                    String nome = scan.next();
+                    System.out.println("Número de diárias: ");
+                    int numDiarias = scan.nextInt();
+                    double taxa = (numDiarias == 15 ? 6.50 : (numDiarias>15 ? 5 : 7.50));
+                    taxa = numDiarias;
+                    System.out.printf("Reserva em nome de: %s%nTotal a pagar: R$%.2f", nome, ((numDiarias50) + taxa));
+                    numContasEnc++;
+                    break;
+case 2:
+                    System.out.println("\nNúmero de contas encerradas: " + numContasEnc);
+                    break;
+                case 3:
+                    flag = false;
+                    break;
+            }
+        }
+        System.out.println("SAINDO . . .");
+    }
+}
