@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Uni5Exe13 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("\nNúmero de paradas feitas: ");
+        int numeroParadas = teclado.nextInt();
+        double distanciaTotal = 0;
+        double combustivelTotal = 0;
+        for (int i = 1; i <= numeroParadas; i++) {
+            System.out.println("\n\nParada " + i + ":");
+            System.out.print("Odômetro: ");
+            double odometro = teclado.nextInt();
+            System.out.print("Litros de combustível comprados: ");
+            double litrosComprados = teclado.nextInt();
+            System.out.printf("Quilometragem por litro até essa parada: %.1fkm/L", (odometro/litrosComprados));
+            distanciaTotal += odometro;
+            combustivelTotal += litrosComprados;
+        }
+        double media = distanciaTotal/combustivelTotal;
+        System.out.printf("\nDistância total da viagem: %.0fkm",distanciaTotal);
+        System.out.printf("\nMédia de km/L da viagem: %.1fkm/L",media);
+    }
+}
