@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Uni5Exe12 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Número de linhas do Triângulode Floyd: ");
+        int numN = teclado.nextInt();
+        System.out.println("\nTriângulo de Floyd com "+ numN + " linhas: ");
+        int ultimoLinha = 1;
+        int quantidadeLinhaAnterior = 0;
+        //System.out.println("1");
+        for (int i = 1; i <= numN; i++) {
+
+            for (int j = ultimoLinha; j <= quantidadeLinhaAnterior+ultimoLinha ; j++) {
+                System.out.print(j +" ");
+            }
+
+            quantidadeLinhaAnterior++;
+            ultimoLinha += quantidadeLinhaAnterior;
+
+            System.out.println(" ");
+        }
+    }
+}
