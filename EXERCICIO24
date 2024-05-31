@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Uni5Exe24 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        String continua = "S";
+        System.out.println("Informe o limite do peso total da pesca do dia: ");
+        double limite = teclado.nextDouble();
+        double pesoTotal = 0;
+        while (continua.equalsIgnoreCase("S") && pesoTotal <= limite) {
+            System.out.println("Informe o peso do peixe: ");
+            double pesoPeixe = teclado.nextDouble();
+            pesoTotal += pesoPeixe;
+            System.out.printf("Peso total atual da pesca: %.1fkg", pesoTotal );
+            System.out.println("\nDeseja informar o peso de mais um peixe? (s) SIM / (n) NÃO");
+            continua = teclado.next();
+        }
+        System.out.printf("\nPeso total pescado: %.1fkg", pesoTotal);
+        System.out.printf("\nLimite do dia: %.1fkg", limite);
+    }
+}
